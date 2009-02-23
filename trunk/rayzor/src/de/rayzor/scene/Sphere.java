@@ -10,12 +10,11 @@ public class Sphere extends ObjectBase
 	
 	public Sphere(Vector3d location, double radius)
 	{
-		if(location==null)
-			throw new IllegalArgumentException("Location must not be null");
+		super(location);
+
 		if(radius<=0)
 			throw new IllegalArgumentException("The radius of a sphere must be greater than 0");
-		
-		this.location = location;
+
 		this.radius = radius;
 	}
 	

@@ -10,6 +10,13 @@ public abstract class ObjectBase
 {
 	protected Vector3d location;
 	
+	public ObjectBase(Vector3d location)
+	{
+		if(location==null)
+			throw new IllegalArgumentException("Location must not be null");
+		this.location = location;
+	}
+	
 	public abstract Hit intersect(Ray ray);
 
 	public void add(ObjectBase object)

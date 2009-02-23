@@ -36,8 +36,8 @@ public class Raytracer
 	private Ray makeRay(int x, int y, Camera cam, BufferedImage image)
 	{
 		double xPart = x - image.getWidth() / 2;
-		double yPart = y - image.getHeight() / 2;
-		double zPart = -( image.getWidth()/2 / Math.tan( cam.getAlpha()/2 ) );
+		double yPart = image.getHeight() / 2 - y;
+		double zPart = -( image.getWidth() / 2 * Math.tan( cam.getAngle()/2 ) ); 
 		
 		return new Ray(cam.getLocation(), new Vector3d(xPart, yPart, zPart));
 	}
