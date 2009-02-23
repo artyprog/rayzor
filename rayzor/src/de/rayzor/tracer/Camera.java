@@ -5,12 +5,23 @@ import de.rayzor.vecmath.Vector3d;
 public class Camera 
 {
 	private Vector3d location;
-	private double alpha;
+	private Vector3d direction;
+	private double angle;
 	
-	public Camera(Vector3d location, double alpha)
+	/**
+	 * Creates a default camera at the point
+	 * of origin and an angle of 45 degrees
+	 */
+	public Camera()
 	{
-		this.location 	= location;
-		this.alpha 		= alpha;
+		this(new Vector3d(0, 0, 0), new Vector3d(0, 0, -1), Math.PI/4);
+	}
+	
+	public Camera(Vector3d location, Vector3d direction, double angle) 
+	{
+		this.location = location;
+		this.direction = direction;
+		this.angle = angle;
 	}
 
 	public Vector3d getLocation() {
@@ -21,12 +32,20 @@ public class Camera
 		this.location = location;
 	}
 
-	public double getAlpha() {
-		return alpha;
+	public Vector3d getDirection() {
+		return direction;
 	}
 
-	public void setAlpha(double alpha) {
-		this.alpha = alpha;
+	public void setDirection(Vector3d direction) {
+		this.direction = direction;
+	}
+
+	public double getAngle() {
+		return angle;
+	}
+
+	public void setAngle(double angle) {
+		this.angle = angle;
 	}
 		
 }

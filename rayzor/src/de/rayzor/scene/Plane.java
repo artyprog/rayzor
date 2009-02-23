@@ -10,10 +10,11 @@ public class Plane extends ObjectBase
 	
 	public Plane(Vector3d location, Vector3d normal)
 	{
-		if(location==null || normal==null)
-			throw new IllegalArgumentException("Location and or normal must not be null.");
+		super(location);
 		
-		this.location = location;
+		if(normal==null)
+			throw new IllegalArgumentException("Normal must not be null.");
+
 		this.normal = normal;
 	}
 	
