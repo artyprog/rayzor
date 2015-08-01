@@ -1,0 +1,1 @@
+This Raytracer is meant to be an easy entrance in the world of raytracing. It must not be hard to understand :D
